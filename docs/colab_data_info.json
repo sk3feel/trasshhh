@@ -1,0 +1,11 @@
+{
+  "archive": "deliverables/colab_training_data.zip",
+  "archive_bytes": 860992113,
+  "archive_sha256": "6eed1ad2118aaa0aa7d3c600902101a2c83034d902d9cb21efc9e42fd2933f15",
+  "unpacked_bytes": 1695635353,
+  "manifest_sha256": "0ea76d95a9f005f9eb4531cef6b472aa0a4fef9596a7658073853ff311c1cdda",
+  "seconds": 69.36880087852478,
+  "minimum_recommended_local_free_GiB": 20,
+  "minimum_recommended_drive_free_GiB": 10,
+  "note": "Space includes mutable checkpoints, previous verified full state, up to3 candidates+final, ZIP and extraction; existing Drive usage is additional."
+}

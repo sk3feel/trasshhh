@@ -1,0 +1,20 @@
+.venv*/
+__pycache__/
+*.pyc
+data/
+artifacts/
+archive/
+kaggle_bundle/
+review_bundle/
+*.zip
+*.pt
+*.safetensors
+experiments/decoding/*/results.json
+
+# Colab inputs and local verification artifacts
+deliverables/
+.pytest_cache/
+.env
+.env.*
+*.npy
+*.npz

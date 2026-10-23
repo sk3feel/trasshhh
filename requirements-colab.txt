@@ -1,0 +1,6 @@
+# Keep Colab's CUDA-enabled torch. Exact observed versions are saved with every run.
+transformers==4.46.3
+tokenizers==0.20.3
+safetensors>=0.4.3,<1
+numpy>=1.26,<3
+pyarrow>=18.1,<25

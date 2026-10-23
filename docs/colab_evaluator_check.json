@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "test": "synthetic programs returning frozen reference values; NOT a model quality measurement",
+  "Docker_execution_count": 512,
+  "finite_reference_denominator": 493,
+  "host_execution": false,
+  "fixture_committed": false
+}

@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "notebook_implementation_sha256": "383582e145019ff09bd58babbbd153320aa441444b204efdbdc1d31d197fbbd4",
+  "CPU_float32_tiny_model_only": true,
+  "gradient_max_absolute_error": 2.9802322387695312e-08,
+  "unequal_microbatch_token_weighting": true,
+  "partial_last_update_block": true,
+  "optimizer_updates_tested": 2,
+  "checkpoint_resume_next_update_bit_identical": true,
+  "schedule_change_rejected": true,
+  "export_reload_weights_and_greedy_identical": true,
+  "deadline_prevents_update_and_preserves_rng": true,
+  "Drive_failed_copy_preserves_last_good": true,
+  "notebook_cells_compile": true,
+  "no_src_or_GitHub_code_loading": true,
+  "A100_BF16_benchmark_not_run": true,
+  "T4_full_timing_not_run": true
+}
