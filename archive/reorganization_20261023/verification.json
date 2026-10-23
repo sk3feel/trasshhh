@@ -1,0 +1,60 @@
+{
+  "passed": true,
+  "key_hashes_unchanged": {
+    "artifacts/baseline/resume.pt": true,
+    "artifacts/baseline/model/model.safetensors": true,
+    "artifacts/baseline/model/config.json": true,
+    "artifacts/baseline/tokenizer.json": true,
+    "notebooks/Colab_train_A100.ipynb": true,
+    "notebooks/Colab_inference_T4.ipynb": true,
+    "deliverables/colab_training_data.zip": true,
+    "deliverables/colab_training_data/manifest.json": true,
+    "experiments/overnight_20261023/runs/D_continue_A_current/best.pt": true,
+    "data/processed/original/validation.parquet": true,
+    "data/processed/training/manifest.json": true,
+    "data/tinysms_qa_12m/download_manifest.json": true
+  },
+  "root_notebooks_bytes_unchanged": true,
+  "notebook_cells_compile": true,
+  "new_notebooks_no_src_or_script_loading": true,
+  "embedded_config_matches": true,
+  "broken_symlinks": [],
+  "baseline_imports_archive": false,
+  "baseline_state_tensors": {
+    "parameter_count": 20106240,
+    "tensor_entries_identical": 179,
+    "embeddings_tied": true
+  },
+  "baseline_inference": {
+    "GPU": "NVIDIA GeForce RTX 3060",
+    "questions": 32,
+    "identical_to_saved_baseline": true,
+    "timing": {
+      "generation_seconds": 1.8528927999723237,
+      "generation_examples": 32,
+      "mean_output_tokens": 65.34375,
+      "p95_output_tokens": 104.25,
+      "hit_limit": 0,
+      "peak_allocated_gib": 0.1874833106994629,
+      "gpu": "NVIDIA GeForce RTX 3060",
+      "batch_size": 32,
+      "settings": {
+        "num_beams": 1,
+        "do_sample": false,
+        "max_new_tokens": 256,
+        "batch_size": 32,
+        "length_penalty": 1.0,
+        "early_stopping": false,
+        "use_cache": true,
+        "forced_eos_token_id": null,
+        "pad_token_id": 0,
+        "bos_token_id": 1,
+        "eos_token_id": 2,
+        "decoder_start_token_id": 1
+      },
+      "timing_includes": "tokenization, batching, transfers, GPU generation, decoding"
+    }
+  },
+  "training_updates_performed": 0,
+  "new_A100_T4_Run_All_not_performed": true
+}

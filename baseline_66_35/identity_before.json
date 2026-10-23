@@ -1,0 +1,36 @@
+{
+  "recorded_utc": "2026-10-22T20:43:04.084466+00:00",
+  "original_checkpoint": "experiments/night_20261022/selected/best_generation.pt",
+  "files": {
+    "artifacts/baseline/resume.pt": "a677bc9d0834907466e20728ef08712ab919c12b61292d57cc5ffe38a5f482c2",
+    "artifacts/baseline/tokenizer.json": "4b25bf57faf2b1ce8b143850c12993864cdff7e8ec0d565f1dd7dad466a4d2b0",
+    "artifacts/baseline/model/config.json": "62ac7edfa5799d54f925d5c9185818005d703a82a387461a3f5edc812d5457cf",
+    "artifacts/baseline/model/model.safetensors": "173f50c8468d145599353c88170d4cb7e203f3aefea8f11638d7f8140cf8af35",
+    "artifacts/baseline/test_questions.jsonl": "e30586c5ba892bf4ba81ec6a78597ad6678fcc9205a3ac68f74ccc209d39bf99",
+    "experiments/session_20261021/artifacts/validation.parquet": "4f59340fb14a854facb17857d6e64528605ef5f148148a03acd981a3008e37ab",
+    "experiments/session_20261021/artifacts/input_manifest.json": "21dc81af9c15056f95dae02bc87e2755b7604ad86702a288372828eaa1fd5c6e",
+    "experiments/night_20261022/data/expanded/manifest.json": "90e6ea37533f418adf9c77f0e3ca29a06fe436b72d7e7fe90ff7050ee725c087",
+    "experiments/night_20261022/configs/late_continuation.json": "bdd4692313ce4cf2647767fc18d02ae296be4ef4407acf821f13f7fc5a4b5498",
+    "artifacts/baseline/generation_512_indices.npy": "21340aa9a8c31c277c6d4026ab04afede2c6e766b4e603f6a647631345a69c10",
+    "artifacts/baseline/references_512.json": "762a8e357fd4a5773a03010270b56fca3f9464c6f5faddd591faede35a6c312e"
+  },
+  "baseline_generation_agreement": {
+    "matches": 330,
+    "numeric_references": 493,
+    "total_tasks": 512,
+    "metric": "Execution-result agreement against finite scalar reference outputs with math.isclose(rel_tol=1e-6,abs_tol=1e-6), NOT textual exact match"
+  },
+  "user_reported_external_results": {
+    "source": "User prompt; files from that T4 run/bot not provided in this turn; not new measurements",
+    "T4_generation_seconds": 27.31,
+    "T4_process_seconds": 79.46,
+    "public_pass_at_1_correct": 637,
+    "public_pass_at_1_total": 960,
+    "public_no_code_percent": 0,
+    "public_syntax_error_percent": 0,
+    "public_runtime_error_percent": 1.56,
+    "public_wrong_numeric_answer_percent": 32.08
+  },
+  "active_training_processes": [],
+  "available_disk_bytes": 868946219008
+}

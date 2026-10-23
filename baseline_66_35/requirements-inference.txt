@@ -1,0 +1,6 @@
+# Kaggle supplies CUDA-enabled torch; do not replace it automatically.
+# Exact local reference torch:2.5.1+cu124. Other versions must be measured/reported.
+transformers==4.46.3
+tokenizers==0.20.3
+safetensors>=0.4.3,<1
+numpy>=1.26,<3

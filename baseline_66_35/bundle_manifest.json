@@ -1,0 +1,49 @@
+{
+  "bundle_kind": "hw2_kaggle_inference",
+  "question_count": 1919,
+  "source_checkpoint": "experiments/night_20261022/selected/best_generation.pt",
+  "checkpoint_sha256": "a677bc9d0834907466e20728ef08712ab919c12b61292d57cc5ffe38a5f482c2",
+  "checkpoint_metrics": {
+    "validation_ce": 0.2955000123701405,
+    "old128_matches": 85,
+    "old128_denominator": 121,
+    "fixed512_matches": 330,
+    "fixed512_denominator": 493,
+    "official_pass_at_1": null
+  },
+  "own_weights_originally_random_initialization": true,
+  "contains_optimizer_or_scaler": false,
+  "generation": {
+    "batch": 64,
+    "source_limit": 192,
+    "max_new_tokens": 256,
+    "do_sample": false,
+    "num_beams": 1,
+    "use_cache": true,
+    "autocast": "float16",
+    "attention": "sdpa",
+    "pad_to_multiple": 8,
+    "forced_eos_token_id": null
+  },
+  "special_tokens": {
+    "<pad>": 0,
+    "<bos>": 1,
+    "<eos>": 2,
+    "<unk>": 3
+  },
+  "reference_versions": {
+    "torch": "2.5.1+cu124",
+    "transformers": "4.46.3",
+    "tokenizers": "0.20.3",
+    "numpy": "1.26.4",
+    "safetensors": "0.8.0",
+    "huggingface-hub": "0.36.2"
+  },
+  "asset_sha256": {
+    "model/config.json": "62ac7edfa5799d54f925d5c9185818005d703a82a387461a3f5edc812d5457cf",
+    "model/generation_config.json": "6d205cc2127333045bc02f4806fc034b15f77bc3f8762bb9f5c56d43f243754c",
+    "model/model.safetensors": "173f50c8468d145599353c88170d4cb7e203f3aefea8f11638d7f8140cf8af35",
+    "tokenizer.json": "4b25bf57faf2b1ce8b143850c12993864cdff7e8ec0d565f1dd7dad466a4d2b0",
+    "test_questions.jsonl": "e30586c5ba892bf4ba81ec6a78597ad6678fcc9205a3ac68f74ccc209d39bf99"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "checkpoint_sha256": "a677bc9d0834907466e20728ef08712ab919c12b61292d57cc5ffe38a5f482c2",
+  "weights_sha256": "173f50c8468d145599353c88170d4cb7e203f3aefea8f11638d7f8140cf8af35",
+  "tokenizer_sha256": "4b25bf57faf2b1ce8b143850c12993864cdff7e8ec0d565f1dd7dad466a4d2b0",
+  "historical_checkpoint": "archive/experiments/night_20261022/selected/best_generation.pt",
+  "local_greedy_matches": 330,
+  "local_denominator": 493,
+  "public_greedy_correct_user_reported": 637,
+  "public_total_user_reported": 960,
+  "public_submission_identity_independently_proven": false,
+  "original_scored_submission_found": false,
+  "original_T4_raw_timing_found": false,
+  "local_rerun_not_original_submission": "evidence/local_greedy_rerun",
+  "different_checkpoint333_kept_in": "archive/experiments/overnight_20261023/runs/D_continue_A_current/best.pt"
+}

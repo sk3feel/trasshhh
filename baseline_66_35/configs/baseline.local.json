@@ -1,0 +1,86 @@
+{
+  "seed": 42,
+  "model": {
+    "activation_dropout": 0.0,
+    "activation_function": "gelu",
+    "architectures": [
+      "BartForConditionalGeneration"
+    ],
+    "attention_dropout": 0.0,
+    "bos_token_id": 1,
+    "classifier_dropout": 0.0,
+    "d_model": 384,
+    "decoder_attention_heads": 6,
+    "decoder_ffn_dim": 1536,
+    "decoder_layerdrop": 0.0,
+    "decoder_layers": 4,
+    "decoder_start_token_id": 1,
+    "dropout": 0.1,
+    "encoder_attention_heads": 6,
+    "encoder_ffn_dim": 1536,
+    "encoder_layerdrop": 0.0,
+    "encoder_layers": 4,
+    "eos_token_id": 2,
+    "forced_eos_token_id": null,
+    "id2label": {
+      "0": "LABEL_0",
+      "1": "LABEL_1",
+      "2": "LABEL_2"
+    },
+    "init_std": 0.02,
+    "is_encoder_decoder": true,
+    "label2id": {
+      "LABEL_0": 0,
+      "LABEL_1": 1,
+      "LABEL_2": 2
+    },
+    "max_position_embeddings": 512,
+    "model_type": "bart",
+    "num_hidden_layers": 4,
+    "pad_token_id": 0,
+    "scale_embedding": false,
+    "torch_dtype": "float32",
+    "transformers_version": "4.46.3",
+    "use_cache": true,
+    "vocab_size": 8192
+  },
+  "paths": {
+    "bundle": ".",
+    "resume": "resume.pt",
+    "train": "../data/processed/training",
+    "validation": "../data/processed/original",
+    "raw_train": "../data/tinysms_qa_12m/data/train"
+  },
+  "training": {
+    "lr": 0.0001,
+    "batch_size": 64,
+    "scheduler_policy": "constant",
+    "weight_decay": 0.01,
+    "gradient_clip": 1.0,
+    "source_limit": 192,
+    "target_limit": 384,
+    "sampler_reset": false
+  },
+  "tokenizer": {
+    "vocab_size": 8192,
+    "pad": 0,
+    "bos": 1,
+    "eos": 2,
+    "unk": 3,
+    "source_bos_eos": true
+  },
+  "generation": {
+    "num_beams": 1,
+    "do_sample": false,
+    "max_new_tokens": 256,
+    "batch_size": 32,
+    "length_penalty": 1.0,
+    "early_stopping": false,
+    "use_cache": true,
+    "forced_eos_token_id": null,
+    "pad_token_id": 0,
+    "bos_token_id": 1,
+    "eos_token_id": 2,
+    "decoder_start_token_id": 1
+  }
+}

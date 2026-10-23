@@ -1,0 +1,7 @@
+# GPU runtime actually used for training/validation; match torch's CUDA wheel separately.
+torch==2.5.1
+transformers==4.46.3
+tokenizers==0.20.3
+numpy==1.26.4
+pyarrow==18.1.0
+safetensors>=0.4.3,<1

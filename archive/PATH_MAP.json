@@ -1,0 +1,431 @@
+{
+  "moved_utc": "2026-10-22T20:50:13.279027+00:00",
+  "moves": [
+    {
+      "old": "experiments/session_20261021",
+      "new": "archive/experiments/session_20261021",
+      "old_path_compatibility_symlink": true
+    },
+    {
+      "old": "experiments/night_20261022",
+      "new": "archive/experiments/night_20261022",
+      "old_path_compatibility_symlink": true
+    },
+    {
+      "old": "experiments/day_20261022",
+      "new": "archive/experiments/day_20261022",
+      "old_path_compatibility_symlink": true
+    },
+    {
+      "old": "kaggle_bundle",
+      "new": "archive/deliveries_before_core_refactor/kaggle_bundle",
+      "old_path_replaced_with_new_delivery": true
+    },
+    {
+      "old": "kaggle_bundle.zip",
+      "new": "archive/deliveries_before_core_refactor/kaggle_bundle.zip",
+      "old_path_replaced_with_new_delivery": true
+    },
+    {
+      "old": "review_bundle",
+      "new": "archive/deliveries_before_core_refactor/review_bundle",
+      "old_path_replaced_with_new_delivery": true
+    },
+    {
+      "old": "review_bundle.zip",
+      "new": "archive/deliveries_before_core_refactor/review_bundle.zip",
+      "old_path_replaced_with_new_delivery": true
+    },
+    {
+      "old": "scripts/build_delivery_bundles.py",
+      "new": "archive/infrastructure/build_delivery_bundles.py"
+    },
+    {
+      "old": "scripts/check_delivery_bundles.py",
+      "new": "archive/infrastructure/check_delivery_bundles.py"
+    },
+    {
+      "old": "scripts/verify_delivery.py",
+      "new": "archive/infrastructure/verify_delivery.py"
+    },
+    {
+      "old": "scripts/update_bot_notebook.py",
+      "new": "archive/infrastructure/update_bot_notebook.py"
+    }
+  ],
+  "primary_code_imports_archive": false,
+  "historical_report_contents_changed": false,
+  "support_compatibility_links": [
+    {
+      "path": "archive/data/tinysms_qa_12m",
+      "target": "data/tinysms_qa_12m",
+      "reason": "Preserve historical scripts that derive ROOT from resolved __file__; no data/runtime duplication"
+    },
+    {
+      "path": "archive/.venv-experiments",
+      "target": ".venv-experiments",
+      "reason": "Preserve historical scripts that derive ROOT from resolved __file__; no data/runtime duplication"
+    },
+    {
+      "path": "archive/.venv-analysis",
+      "target": ".venv-analysis",
+      "reason": "Preserve historical scripts that derive ROOT from resolved __file__; no data/runtime duplication"
+    }
+  ],
+  "reorganization_20261023": {
+    "moves": [
+      {
+        "old": "README.md",
+        "new": "archive/legacy_project/README.before_reorganization.md"
+      },
+      {
+        "old": "artifacts/baseline",
+        "new": "baseline_66_35"
+      },
+      {
+        "old": "src",
+        "new": "baseline_66_35/src"
+      },
+      {
+        "old": "configs/generation_greedy.json",
+        "new": "baseline_66_35/configs/generation_greedy.json"
+      },
+      {
+        "old": "configs/baseline.json",
+        "new": "baseline_66_35/configs/baseline.json"
+      },
+      {
+        "old": "configs/generation_beam4.json",
+        "new": "baseline_66_35/configs/generation_beam4.json"
+      },
+      {
+        "old": "configs/generation_beam2.json",
+        "new": "baseline_66_35/configs/generation_beam2.json"
+      },
+      {
+        "old": "configs/generation_hf_defaults.json",
+        "new": "baseline_66_35/configs/generation_hf_defaults.json"
+      },
+      {
+        "old": "configs/generation_selected.json",
+        "new": "baseline_66_35/configs/generation_selected.json"
+      },
+      {
+        "old": "configs/large_a100.json",
+        "new": "archive/colab_preparation/configs/large_a100.json"
+      },
+      {
+        "old": "configs/colab_data_identity.json",
+        "new": "archive/colab_preparation/configs/colab_data_identity.json"
+      },
+      {
+        "old": "configs/generation_greedy_t4.json",
+        "new": "baseline_66_35/configs/generation_greedy_t4.json"
+      },
+      {
+        "old": "notebooks/Colab_train_A100.ipynb",
+        "new": "Colab_train_A100.ipynb"
+      },
+      {
+        "old": "notebooks/Colab_inference_T4.ipynb",
+        "new": "Colab_inference_T4.ipynb"
+      },
+      {
+        "old": "notebooks",
+        "new": "archive/legacy_notebooks"
+      },
+      {
+        "old": "scripts",
+        "new": "archive/colab_preparation/scripts"
+      },
+      {
+        "old": "tests",
+        "new": "archive/colab_preparation/tests"
+      },
+      {
+        "old": "docs",
+        "new": "archive/colab_preparation/docs"
+      },
+      {
+        "old": "requirements-colab.txt",
+        "new": "archive/colab_preparation/requirements-colab.txt"
+      },
+      {
+        "old": "COLAB_RUN.md",
+        "new": "archive/colab_preparation/COLAB_RUN.md"
+      },
+      {
+        "old": "requirements-inference.txt",
+        "new": "baseline_66_35/requirements-inference.txt"
+      },
+      {
+        "old": "requirements-prepare.txt",
+        "new": "baseline_66_35/requirements-prepare.txt"
+      },
+      {
+        "old": "requirements-train.txt",
+        "new": "baseline_66_35/requirements-train.txt"
+      },
+      {
+        "old": "experiments/day_20261022",
+        "new": "archive/legacy_paths/experiments/day_20261022"
+      },
+      {
+        "old": "experiments/overnight_20261023",
+        "new": "archive/experiments/overnight_20261023"
+      },
+      {
+        "old": "experiments/night_20261022",
+        "new": "archive/legacy_paths/experiments/night_20261022"
+      },
+      {
+        "old": "experiments/session_20261021",
+        "new": "archive/legacy_paths/experiments/session_20261021"
+      },
+      {
+        "old": "experiments/decoding",
+        "new": "archive/experiments/decoding"
+      },
+      {
+        "old": "artifacts/deployment_greedy.log",
+        "new": "archive/legacy_project/artifacts/deployment_greedy.log"
+      },
+      {
+        "old": "artifacts/project_audit.log",
+        "new": "archive/legacy_project/artifacts/project_audit.log"
+      },
+      {
+        "old": "artifacts/project_audit.json",
+        "new": "archive/legacy_project/artifacts/project_audit.json"
+      },
+      {
+        "old": "artifacts/delivery_archives.json",
+        "new": "archive/legacy_project/artifacts/delivery_archives.json"
+      },
+      {
+        "old": "artifacts/deployment_selected.log",
+        "new": "archive/legacy_project/artifacts/deployment_selected.log"
+      },
+      {
+        "old": "artifacts/deployment_test",
+        "new": "archive/legacy_project/artifacts/deployment_test"
+      },
+      {
+        "old": "AGENT_USAGE.md",
+        "new": "archive/legacy_project/AGENT_USAGE.md"
+      },
+      {
+        "old": "RECOVERY_STATUS.md",
+        "new": "archive/legacy_project/RECOVERY_STATUS.md"
+      },
+      {
+        "old": "delivery_verification",
+        "new": "archive/legacy_project/delivery_verification"
+      },
+      {
+        "old": "delivery_verification_run.log",
+        "new": "archive/legacy_project/delivery_verification_run.log"
+      },
+      {
+        "old": "kaggle_bundle",
+        "new": "archive/legacy_project/kaggle_bundle"
+      },
+      {
+        "old": "kaggle_bundle.zip",
+        "new": "archive/legacy_project/kaggle_bundle.zip"
+      },
+      {
+        "old": "review_bundle",
+        "new": "archive/legacy_project/review_bundle"
+      },
+      {
+        "old": "review_bundle.zip",
+        "new": "archive/legacy_project/review_bundle.zip"
+      },
+      {
+        "old": "analysis",
+        "new": "archive/analysis"
+      },
+      {
+        "old": "hw2_code_generation.md",
+        "new": "archive/assignment/hw2_code_generation.md"
+      },
+      {
+        "old": "deliverables/colab_training_data.zip",
+        "new": "data/colab/colab_training_data.zip"
+      },
+      {
+        "old": "deliverables/colab_training_data",
+        "new": "data/colab/prepared"
+      },
+      {
+        "old": "deliverables",
+        "new": "archive/colab_preparation/local_checks"
+      }
+    ],
+    "symlink_repairs": [
+      {
+        "path": "data/processed/original",
+        "target": "../../archive/experiments/session_20261021/artifacts"
+      },
+      {
+        "path": "data/processed/training",
+        "target": "../../archive/experiments/night_20261022/data/expanded"
+      },
+      {
+        "path": "archive/experiments/day_20261022/data/original",
+        "target": "../../session_20261021/artifacts"
+      },
+      {
+        "path": "archive/experiments/day_20261022/data/current",
+        "target": "../../night_20261022/data/expanded"
+      },
+      {
+        "path": "archive/experiments/day_20261022/data/expanded/validation_groups.json",
+        "target": "../../../session_20261021/artifacts/validation_groups.json"
+      },
+      {
+        "path": "archive/experiments/day_20261022/data/expanded/validation.parquet",
+        "target": "../../../session_20261021/artifacts/validation.parquet"
+      },
+      {
+        "path": "archive/experiments/day_20261022/data/expanded/validation_source.npy",
+        "target": "../../../session_20261021/artifacts/validation_source.npy"
+      },
+      {
+        "path": "archive/experiments/day_20261022/data/expanded/generation_validation_indices.npy",
+        "target": "../../../session_20261021/artifacts/generation_validation_indices.npy"
+      },
+      {
+        "path": "archive/experiments/day_20261022/data/expanded/validation_target_offsets.npy",
+        "target": "../../../session_20261021/artifacts/validation_target_offsets.npy"
+      },
+      {
+        "path": "archive/experiments/day_20261022/data/expanded/tokenizer_8192.json",
+        "target": "../../../session_20261021/artifacts/tokenizer_8192.json"
+      },
+      {
+        "path": "archive/experiments/day_20261022/data/expanded/validation_source_offsets.npy",
+        "target": "../../../session_20261021/artifacts/validation_source_offsets.npy"
+      },
+      {
+        "path": "archive/experiments/day_20261022/data/expanded/validation_target.npy",
+        "target": "../../../session_20261021/artifacts/validation_target.npy"
+      },
+      {
+        "path": "archive/experiments/night_20261022/data/expanded/validation_groups.json",
+        "target": "../../../session_20261021/artifacts/validation_groups.json"
+      },
+      {
+        "path": "archive/experiments/night_20261022/data/expanded/validation.parquet",
+        "target": "../../../session_20261021/artifacts/validation.parquet"
+      },
+      {
+        "path": "archive/experiments/night_20261022/data/expanded/validation_source.npy",
+        "target": "../../../session_20261021/artifacts/validation_source.npy"
+      },
+      {
+        "path": "archive/experiments/night_20261022/data/expanded/generation_validation_indices.npy",
+        "target": "../../../session_20261021/artifacts/generation_validation_indices.npy"
+      },
+      {
+        "path": "archive/experiments/night_20261022/data/expanded/validation_target_offsets.npy",
+        "target": "../../../session_20261021/artifacts/validation_target_offsets.npy"
+      },
+      {
+        "path": "archive/experiments/night_20261022/data/expanded/tokenizer_8192.json",
+        "target": "../../../session_20261021/artifacts/tokenizer_8192.json"
+      },
+      {
+        "path": "archive/experiments/night_20261022/data/expanded/validation_source_offsets.npy",
+        "target": "../../../session_20261021/artifacts/validation_source_offsets.npy"
+      },
+      {
+        "path": "archive/experiments/night_20261022/data/expanded/validation_target.npy",
+        "target": "../../../session_20261021/artifacts/validation_target.npy"
+      },
+      {
+        "path": "archive/experiments/night_20261022/data/original/train_source_offsets.npy",
+        "target": "../../../session_20261021/artifacts/train_source_offsets.npy"
+      },
+      {
+        "path": "archive/experiments/night_20261022/data/original/train_source.npy",
+        "target": "../../../session_20261021/artifacts/train_source.npy"
+      },
+      {
+        "path": "archive/experiments/night_20261022/data/original/train_target.npy",
+        "target": "../../../session_20261021/artifacts/train_target.npy"
+      },
+      {
+        "path": "archive/experiments/night_20261022/data/original/validation_groups.json",
+        "target": "../../../session_20261021/artifacts/validation_groups.json"
+      },
+      {
+        "path": "archive/experiments/night_20261022/data/original/validation.parquet",
+        "target": "../../../session_20261021/artifacts/validation.parquet"
+      },
+      {
+        "path": "archive/experiments/night_20261022/data/original/validation_source.npy",
+        "target": "../../../session_20261021/artifacts/validation_source.npy"
+      },
+      {
+        "path": "archive/experiments/night_20261022/data/original/generation_validation_indices.npy",
+        "target": "../../../session_20261021/artifacts/generation_validation_indices.npy"
+      },
+      {
+        "path": "archive/experiments/night_20261022/data/original/train_target_offsets.npy",
+        "target": "../../../session_20261021/artifacts/train_target_offsets.npy"
+      },
+      {
+        "path": "archive/experiments/night_20261022/data/original/train.parquet",
+        "target": "../../../session_20261021/artifacts/train.parquet"
+      },
+      {
+        "path": "archive/experiments/night_20261022/data/original/validation_target_offsets.npy",
+        "target": "../../../session_20261021/artifacts/validation_target_offsets.npy"
+      },
+      {
+        "path": "archive/experiments/night_20261022/data/original/tokenizer_8192.json",
+        "target": "../../../session_20261021/artifacts/tokenizer_8192.json"
+      },
+      {
+        "path": "archive/experiments/night_20261022/data/original/validation_source_offsets.npy",
+        "target": "../../../session_20261021/artifacts/validation_source_offsets.npy"
+      },
+      {
+        "path": "archive/experiments/night_20261022/data/original/validation_target.npy",
+        "target": "../../../session_20261021/artifacts/validation_target.npy"
+      },
+      {
+        "path": "archive/legacy_paths/experiments/day_20261022",
+        "target": "../../experiments/day_20261022"
+      },
+      {
+        "path": "archive/legacy_paths/experiments/night_20261022",
+        "target": "../../experiments/night_20261022"
+      },
+      {
+        "path": "archive/legacy_paths/experiments/session_20261021",
+        "target": "../../experiments/session_20261021"
+      },
+      {
+        "path": "archive/legacy_project/delivery_verification/notebook_input/private_dataset",
+        "target": "../../kaggle_bundle"
+      }
+    ],
+    "historical_report_contents_changed": false,
+    "old_commands_need_path_adaptation": true,
+    "root_compatibility_links_removed_to_archive": true,
+    "additional_moves": [
+      {
+        "old": "artifacts/deployment_test/greedy",
+        "new": "baseline_66_35/evidence/local_greedy_rerun"
+      },
+      {
+        "old": "archive/README.md",
+        "new": "archive/legacy_project/ARCHIVE.before_reorganization.md",
+        "old_path_replaced_with_current_index": true
+      }
+    ]
+  }
+}

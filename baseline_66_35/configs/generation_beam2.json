@@ -1,0 +1,14 @@
+{
+  "num_beams": 2,
+  "do_sample": false,
+  "max_new_tokens": 256,
+  "batch_size": 32,
+  "length_penalty": 1.0,
+  "early_stopping": false,
+  "use_cache": true,
+  "forced_eos_token_id": null,
+  "pad_token_id": 0,
+  "bos_token_id": 1,
+  "eos_token_id": 2,
+  "decoder_start_token_id": 1
+}

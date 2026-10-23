@@ -2,7 +2,7 @@
 import ast,copy,hashlib,json,math,os,random,sys,tempfile,time,zipfile
 from datetime import datetime,timezone
 from pathlib import Path
-ROOT=Path(__file__).resolve().parents[1]
+ROOT=Path(__file__).resolve().parents[3]
 sys.path.insert(0,str(ROOT))
 import numpy as np
 import torch
@@ -10,8 +10,8 @@ from tokenizers import Tokenizer
 
 def check():
     torch.set_num_threads(2)
-    nb=json.loads((ROOT/'notebooks/Colab_train_A100.ipynb').read_text())
-    t4=json.loads((ROOT/'notebooks/Colab_inference_T4.ipynb').read_text())
+    nb=json.loads((ROOT/'Colab_train_A100.ipynb').read_text())
+    t4=json.loads((ROOT/'Colab_inference_T4.ipynb').read_text())
     ns={'RUN_PHASES':False,'Path':Path,'os':os,'sys':sys,'time':time,'datetime':datetime,'timezone':timezone}
     code_cells=[c for c in nb['cells'] if c['cell_type']=='code']
     for notebook in [nb,t4]:
@@ -30,7 +30,7 @@ def check():
     assert ns['INFERENCE_SOURCE'].strip() in ''.join(''.join(c['source']) for c in t4['cells'])
     initial=ast.parse(''.join(code_cells[0]['source']))
     embedded=next(ast.literal_eval(x.value) for x in initial.body if isinstance(x,ast.Assign) and any(isinstance(t,ast.Name) and t.id=='CONFIG' for t in x.targets))
-    assert embedded==json.loads((ROOT/'configs/large_a100.json').read_text())
+    assert embedded==json.loads((ROOT/'archive/colab_preparation/configs/large_a100.json').read_text())
     def use(name):return ns[name]
     with tempfile.TemporaryDirectory() as tmp:
         p=Path(tmp);cache=p/'cache';cache.mkdir()
@@ -45,7 +45,7 @@ def check():
         assert torch.equal(batch['attention_mask'],batch['input_ids'].ne(0))
         order=use('UpdateOrder')(ds,42,0,4);assert sorted(np.concatenate([order.block(i) for i in range(len(order))]).tolist())==list(range(7))
         assert sorted(map(len,[order.block(i) for i in range(len(order))]))==[3,4]
-        cfg=json.loads((ROOT/'configs/large_a100.json').read_text());model_cfg=copy.deepcopy(cfg['model']);model_cfg.update(d_model=32,encoder_layers=1,decoder_layers=1,num_hidden_layers=1,encoder_attention_heads=2,decoder_attention_heads=2,encoder_ffn_dim=64,decoder_ffn_dim=64,dropout=0.,max_position_embeddings=32)
+        cfg=json.loads((ROOT/'archive/colab_preparation/configs/large_a100.json').read_text());model_cfg=copy.deepcopy(cfg['model']);model_cfg.update(d_model=32,encoder_layers=1,decoder_layers=1,num_hidden_layers=1,encoder_attention_heads=2,decoder_attention_heads=2,encoder_ffn_dim=64,decoder_ffn_dim=64,dropout=0.,max_position_embeddings=32)
         device=torch.device('cpu');use('seed_all')(42,device);m=use('create_model')(model_cfg);ref=copy.deepcopy(m)
         indices=np.arange(5);ref.train();b=use('collate')([ds[i] for i in indices]);b.pop('_indices');ref(**b,use_cache=False).loss.backward()
         use('backward_block')(m,ds,indices,2,device,None)
@@ -76,7 +76,7 @@ def check():
         export=p/'export';restored.save_pretrained(export,safe_serialization=True)
         loaded=ns['BartForConditionalGeneration'].from_pretrained(export,local_files_only=True,attn_implementation='sdpa')
         assert all(torch.equal(v,loaded.state_dict()[k]) for k,v in restored.state_dict().items())
-        tokenizer=Tokenizer.from_file(str(ROOT/'artifacts/baseline/tokenizer.json'))
+        tokenizer=Tokenizer.from_file(str(ROOT/'baseline_66_35/tokenizer.json'))
         before,_=use('generate_records')(restored,tokenizer,['x','y'],2,8,device)
         after,_=use('generate_records')(loaded,tokenizer,['x','y'],2,8,device)
         assert before==after
@@ -99,5 +99,5 @@ def check():
         finally:ns['shutil'].copyfile=real_copy
         assert prior==(remote/'last.json').read_bytes();use('resolve_checkpoint')(remote/'last.json')
     result={'passed':True,'notebook_implementation_sha256':computed,'CPU_float32_tiny_model_only':True,'gradient_max_absolute_error':max_gradient_error,'unequal_microbatch_token_weighting':True,'partial_last_update_block':True,'optimizer_updates_tested':2,'checkpoint_resume_next_update_bit_identical':True,'schedule_change_rejected':True,'export_reload_weights_and_greedy_identical':True,'deadline_prevents_update_and_preserves_rng':True,'Drive_failed_copy_preserves_last_good':True,'notebook_cells_compile':True,'no_src_or_GitHub_code_loading':True,'A100_BF16_benchmark_not_run':True,'T4_full_timing_not_run':True}
-    (ROOT/'deliverables/colab_local_checks.json').write_text(json.dumps(result,indent=2));print(json.dumps(result,indent=2))
+    (ROOT/'archive/colab_preparation/local_checks/colab_local_checks.json').write_text(json.dumps(result,indent=2));print(json.dumps(result,indent=2))
 if __name__=='__main__':check()

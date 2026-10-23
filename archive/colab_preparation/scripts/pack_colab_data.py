@@ -3,7 +3,7 @@ import hashlib,json,os,shutil,sys,time,zipfile
 from pathlib import Path
 import numpy as np
 import pyarrow.parquet as pq
-ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT))
+ROOT=Path(__file__).resolve().parents[3];sys.path.insert(0,str(ROOT))
 def sha(path):
     h=hashlib.sha256()
     with Path(path).open('rb') as f:
@@ -14,8 +14,8 @@ def write_json(path,value):
     path.write_text(json.dumps(value,indent=2,ensure_ascii=False,allow_nan=False))
 
 def main():
-    started=time.time();dest=ROOT/'deliverables/colab_training_data';dest.mkdir(parents=True,exist_ok=False)
-    source=ROOT/'archive/experiments/day_20261022/data/expanded';baseline=ROOT/'artifacts/baseline'
+    started=time.time();dest=ROOT/'data/colab/prepared';dest.mkdir(parents=True,exist_ok=False)
+    source=ROOT/'archive/experiments/day_20261022/data/expanded';baseline=ROOT/'baseline_66_35'
     manifest=json.loads((source/'manifest.json').read_text())
     for name,digest in manifest.items():assert sha(source/name)==digest,name
     for name in list(manifest)+['dataset.json','sampled_row_indices.npz']:
@@ -40,11 +40,11 @@ def main():
     write_json(dest/'preparation_audit.json',{'train_rows':n,'validation_rows':1500,'provenance_question_hashes_recomputed':n,'train_validation_group_overlap':0,'all_hash_mod200_holdout_excluded':True,'tokenizer_retrained':False,'original_cache_manifest_verified':True,'source_fingerprint':sha(source/'manifest.json'),'baseline_unchanged':True,'preparation_seconds':time.time()-started})
     files={str(p.relative_to(dest)):{'bytes':p.stat().st_size,'sha256':sha(p)} for p in sorted(dest.rglob('*')) if p.is_file()}
     write_json(dest/'manifest.json',{'kind':'hw2_colab_training_data','dataset':'SlavaYus/tinysms_qa_12m','revision':'b2724689ff079e9c22efd548fe134bfb29036dbb','train_rows':n,'validation_rows':1500,'fixed512_denominator':493,'tokenizer_sha256':sha(dest/'tokenizer.json'),'test_answers_included':False,'files':files})
-    out=dest.with_suffix('.zip')
+    out=ROOT/'data/colab/colab_training_data.zip'
     with zipfile.ZipFile(out,'w',zipfile.ZIP_DEFLATED,compresslevel=1,allowZip64=True) as z:
         for p in sorted(dest.rglob('*')):
-            if p.is_file():z.write(p,str(p.relative_to(dest.parent)))
+            if p.is_file():z.write(p,'colab_training_data/'+str(p.relative_to(dest)))
     with zipfile.ZipFile(out) as z:assert z.testzip() is None
     report={'archive':str(out.relative_to(ROOT)),'archive_bytes':out.stat().st_size,'archive_sha256':sha(out),'unpacked_bytes':sum(p.stat().st_size for p in dest.rglob('*') if p.is_file()),'manifest_sha256':sha(dest/'manifest.json'),'seconds':time.time()-started,'minimum_recommended_local_free_GiB':20,'minimum_recommended_drive_free_GiB':10,'note':'Space includes mutable checkpoints, previous verified full state, up to3 candidates+final, ZIP and extraction; existing Drive usage is additional.'}
-    write_json(ROOT/'deliverables/colab_data_info.json',report);print(json.dumps(report,indent=2))
+    write_json(ROOT/'archive/colab_preparation/docs/colab_data_info.json',report);print(json.dumps(report,indent=2))
 if __name__=='__main__':main()

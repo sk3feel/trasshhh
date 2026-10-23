@@ -18,3 +18,13 @@ deliverables/
 .env.*
 *.npy
 *.npz
+
+# Frozen baseline artifacts and inference assets stay local.
+baseline_66_35/inference_bundle/
+baseline_66_35/evidence/
+baseline_66_35/reproduction/
+baseline_66_35/tokenizer.json
+baseline_66_35/test_questions.jsonl
+*.log
+baseline_66_35/references_*.json
+baseline_66_35/validation_report.json

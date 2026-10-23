@@ -8,13 +8,13 @@ import sys
 import zipfile
 from pathlib import Path
 
-ROOT = Path(__file__).resolve().parents[1]
-sys.path.insert(0, str(ROOT))
+ROOT = Path(__file__).resolve().parents[3]
+sys.path.insert(0, str(ROOT / "baseline_66_35"))
 from src.sandbox import compare, execute
 
 
 def evaluate(archive, output, workers=4):
-    expected = json.loads((ROOT / "configs/colab_data_identity.json").read_text())
+    expected = json.loads((ROOT / "archive/colab_preparation/configs/colab_data_identity.json").read_text())
     with zipfile.ZipFile(archive) as z:
         # Read specific members, never extract or import code from the review ZIP.
         for name, digest in expected["evaluation_files"].items():
