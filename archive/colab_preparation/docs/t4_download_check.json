@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "selected_export": "candidate_000082048",
+  "batch": 32,
+  "all_cells_compile": true,
+  "automatic_ZIP_download_after_Drive_verification": true,
+  "browser_download_failure_preserves_Drive_copy": true,
+  "GPU_or_training_run": false
+}
